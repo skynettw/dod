@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block page-title %}
+全唐詩檢索
+{% endblock %}
+{% block content %}
+<p>
+<button><a href='/authors/'>所有作者</a></button>    
+名詩人：
+<button><a href='/poetry/李白'>李白</a></button>
+<button><a href='/poetry/杜甫'>杜甫</a></button>
+<button><a href='/poetry/白居易'>白居易</a></button>
+<button><a href='/poetry/杜牧'>杜牧</a></button>
+<button><a href='/poetry/王維'>王維</a></button>
+<button><a href='/poetry/孟浩然'>孟浩然</a></button>
+<button><a href='/poetry/王之渙'>王之渙</a></button>
+<button><a href='/poetry/賀知章'>賀知章</a></button>
+</p>
+<p>
+    Top 10：
+    {% for item in top10 %}
+    <button><a href='/poetry/{{ item.name }}'>{{ item.name }}</a></button>
+    {% endfor %}
+</p>
+<h3>
+全唐詩檢索--{{ author }}（共{{ numbers }}首）
+</h3>
+<div>
+    {% for p in selected_poetry %}
+    <hr>
+    題名：【<b>{{ p.title }}</b>】 <br/>
+    {{ p.content }} 
+    {% endfor %}
+</div>
+{% endblock %}

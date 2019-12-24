@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block page-title %}
+唐詩作者檢索
+{% endblock %}
+{% block content %}
+<h3>
+全唐詩作者列表
+</h3>
+<div>
+    {% for author in authors %}
+    <a href='/poetry/{{ author.name }}'>{{ author.name }}</a>, 
+    {% endfor %}
+</div>
+{% endblock %}
