@@ -18,6 +18,8 @@ from django.urls import path
 from mysite import views
 
 urlpatterns = [
+    path('q/<str:qstr>', views.query),
+    path('q/', views.query),
     path('admin/', admin.site.urls),
     path('', views.index)
 ]
