@@ -12,6 +12,9 @@ def query(request, qstr="none"):
     if qstr == 'allstores':
         allstores = Store.objects.all()
         res = list(allstores.values())
+    elif qstr == 'alldrinks':
+        alldrinks = Drinks.objects.all()
+        res = list(alldrinks.values())
     else:
         res = {'key':'none'}
 
