@@ -20,6 +20,7 @@ from mysite import views
 urlpatterns = [
     path('q/<str:qstr>', views.query),
     path('q/', views.query),
+    path('store/<str:storename>', views.store),
     path('admin/', admin.site.urls),
     path('', views.index)
 ]
