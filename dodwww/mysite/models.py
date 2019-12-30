@@ -12,6 +12,12 @@ class Drinks(models.Model):
     price = models.IntegerField(default=40)
     cup = models.CharField(max_length=3, default="L")
     calorie = models.IntegerField(default=0)
+    milk = models.BooleanField(default=False)
+    tea = models.BooleanField(default=False)
+    cafe = models.BooleanField(default=False)
+    juice = models.BooleanField(default=False)
+    bubble = models.BooleanField(default=False)
+    hotcold = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
